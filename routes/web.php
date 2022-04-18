@@ -1,8 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-// use Illuminate\Http\Request;
-use App\Http\Controllers\Custome\FirstController;
+use Illuminate\Http\Request;
+use App\Http\Controllers\CustomController;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,39 +15,17 @@ use App\Http\Controllers\Custome\FirstController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [CustomController::class, 'index']);
 
-// Route::get('/about', function () {
-//     return view('about');
-// });
+Route::get(md5('/about'), [CustomController::class, 'about'])->name('about.us');
 
-Route::get(md5('/about'), function () {
-    return view('about');
-})->name('about.us');
+Route::get('/contactbody', [CustomController::class, 'contact'])->name('contact.us');
 
-// Route::view('/about', 'about'); // View Route
+Route::get('/country', [CustomController::class, 'country'])->name('country')->middleware('country');
 
-Route::get('/contactbody', function () { // Named Route
-    return view('contact');
-})->name('contact.us');
+Route::get('/controller', [CustomController::class, 'controller'])->name('controller');
 
-// Route::get('/contact/{roll}', function ($roll) { // Route With Parametter
-//     return "Your Roll is $roll";
-// });
-
-Route::get('/controller', [FirstController::class, 'index'])->name('controller');
-// Route::get('/user', [FirstController::class, 'show'])->name('controller');
-
-Route::get('/country', function(){
-    return view('country');
-})->name('country')
-->middleware('country');
-
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth'])->name('dashboard');
+Route::get('/dashboard', [CustomController::class])->middleware(['auth'])->name('dashboard');
 
 require __DIR__.'/auth.php';
 
