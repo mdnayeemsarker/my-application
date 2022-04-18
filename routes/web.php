@@ -17,9 +17,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-
-
-
 // Route::get('/about', function () {
 //     return view('about');
 // });
@@ -38,8 +35,10 @@ Route::get('/contactbody', function () { // Named Route
 //     return "Your Roll is $roll";
 // });
 
-
-
+Route::get('/country', function(){
+    return view('country');
+})->name('country')
+->middleware('country');
 
 Route::get('/dashboard', function () {
     return view('dashboard');

@@ -483,8 +483,10 @@
                                     d="M7 8h10M7 12h4m1 8l-4-4H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-3l-4 4z">
                                 </path>
                             </svg>
-                            <div class="ml-4 text-lg leading-7 font-semibold"><a href="https://laravel-news.com/"
-                                    class="underline text-gray-900 dark:text-white">Laravel News</a></div>
+                            <div class="ml-4 text-lg leading-7 font-semibold">
+                                <a href="{{ route('country') }}"
+                                    class="underline text-gray-900 dark:text-white">Country</a>
+                            </div>
                         </div>
 
                         <div class="ml-12">
@@ -505,23 +507,24 @@
                                 </path>
                             </svg>
                             <div class="ml-4 text-lg leading-7 font-semibold text-gray-900 dark:text-white">Vibrant
-                                Ecosystem</div>
+                                Ecosystem
+                            </div>
                         </div>
 
                         <div class="ml-12">
                             <div class="mt-2 text-gray-600 dark:text-gray-400 text-sm">
-                                Laravel's robust library of first-party tools and libraries, such as <a
-                                    href="https://forge.laravel.com" class="underline">Forge</a>, <a
-                                    href="https://vapor.laravel.com" class="underline">Vapor</a>, <a
-                                    href="https://nova.laravel.com" class="underline">Nova</a>, and <a
-                                    href="https://envoyer.io" class="underline">Envoyer</a> help you take your
-                                projects to the next level. Pair them with powerful open source libraries like <a
-                                    href="https://laravel.com/docs/billing" class="underline">Cashier</a>, <a
-                                    href="https://laravel.com/docs/dusk" class="underline">Dusk</a>, <a
-                                    href="https://laravel.com/docs/broadcasting" class="underline">Echo</a>, <a
-                                    href="https://laravel.com/docs/horizon" class="underline">Horizon</a>, <a
-                                    href="https://laravel.com/docs/sanctum" class="underline">Sanctum</a>, <a
-                                    href="https://laravel.com/docs/telescope" class="underline">Telescope</a>, and
+                                Laravel's robust library of first-party tools and libraries, such as
+                                <a href="https://forge.laravel.com" class="underline">Forge</a>,
+                                <a href="https://vapor.laravel.com" class="underline">Vapor</a>,
+                                <a href="https://nova.laravel.com" class="underline">Nova</a>, and
+                                <a href="https://envoyer.io" class="underline">Envoyer</a> help you take your
+                                projects to the next level. Pair them with powerful open source libraries like
+                                <a href="https://laravel.com/docs/billing" class="underline">Cashier</a>,
+                                <a href="https://laravel.com/docs/dusk" class="underline">Dusk</a>,
+                                <a href="https://laravel.com/docs/broadcasting" class="underline">Echo</a>,
+                                <a href="https://laravel.com/docs/horizon" class="underline">Horizon</a>,
+                                <a href="https://laravel.com/docs/sanctum" class="underline">Sanctum</a>,
+                                <a href="https://laravel.com/docs/telescope" class="underline">Telescope</a>, and
                                 more.
                             </div>
                         </div>
@@ -550,9 +553,7 @@
                             </path>
                         </svg>
 
-                        <a href="https://github.com/sponsors/taylorotwell" class="ml-1 underline">
-                            Sponsor
-                        </a>
+                        <a href="https://github.com/sponsors/taylorotwell" class="ml-1 underline"> Sponsor </a>
                     </div>
                 </div>
 
