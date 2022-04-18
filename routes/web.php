@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+// use Illuminate\Http\Request;
+use App\Http\Controllers\Custome\FirstController;
 
 /*
 |--------------------------------------------------------------------------
@@ -35,6 +37,9 @@ Route::get('/contactbody', function () { // Named Route
 //     return "Your Roll is $roll";
 // });
 
+Route::get('/controller', [FirstController::class, 'index'])->name('controller');
+// Route::get('/user', [FirstController::class, 'show'])->name('controller');
+
 Route::get('/country', function(){
     return view('country');
 })->name('country')
@@ -45,3 +50,7 @@ Route::get('/dashboard', function () {
 })->middleware(['auth'])->name('dashboard');
 
 require __DIR__.'/auth.php';
+
+// 01. 1ta Domain & Hosting
+// 02. Admin Panel -> Laravel
+// 03. Android Apps
