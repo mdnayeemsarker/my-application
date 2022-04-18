@@ -24,16 +24,19 @@ Route::get('/', function () {
 //     return view('about');
 // });
 
-Route::get('/about', function () {
-    return redirect('/contact');
-});
+Route::get(md5('/about'), function () {
+    return view('about');
+})->name('about.us');
 
+// Route::view('/about', 'about'); // View Route
 
-Route::get('/contact', function () {
+Route::get('/contactbody', function () { // Named Route
     return view('contact');
-});
+})->name('contact.us');
 
-
+// Route::get('/contact/{roll}', function ($roll) { // Route With Parametter
+//     return "Your Roll is $roll";
+// });
 
 
 

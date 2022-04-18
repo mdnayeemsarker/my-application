@@ -437,7 +437,7 @@
                                 </path>
                             </svg>
                             <div class="ml-4 text-lg leading-7 font-semibold">
-                                <a href="{{ url('/about') }}"
+                                <a href="{{ route('about.us') }}"
                                     class="underline text-gray-900 dark:text-white">About</a>
                             </div>
                         </div>
@@ -461,7 +461,7 @@
                                 <path d="M15 13a3 3 0 11-6 0 3 3 0 016 0z"></path>
                             </svg>
                             <div class="ml-4 text-lg leading-7 font-semibold">
-                                <a href="{{ url('/contact') }}"
+                                <a href="{{ route('contact.us') }}"
                                     class="underline text-gray-900 dark:text-white">Contact</a>
                             </div>
                         </div>
