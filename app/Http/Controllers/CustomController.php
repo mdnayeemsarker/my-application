@@ -12,7 +12,7 @@ class CustomController extends Controller
     }
     public function about()
     {
-        return view('about');
+        return view('about', ['name' => 'Samantha']);
     }
     public function contact()
     {

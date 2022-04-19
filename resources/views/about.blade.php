@@ -10,7 +10,7 @@
 
 <body>
     <a href="{{ url('/') }}">Home</a>
-    <h2>This is an About Us Page</h2>
+    <h2>This is an About Us Page {{ $name }} </h2>
 
     <br>
     <form action="{{ route('about.store') }}" method="post">
