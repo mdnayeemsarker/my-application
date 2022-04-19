@@ -30,5 +30,16 @@ class CustomController extends Controller
     {
         return view('dashboard');
     }
+    public function csrf()
+    {
+        return view('csrf');
+    }
+    public function StudentStore(Request $request)
+    {
+        dd($request->all());
+    }
+    public function about_store(Request $request){
+        dd($request->all());
+    }
 
 }

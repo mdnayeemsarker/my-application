@@ -27,6 +27,12 @@ Route::get('/controller', [CustomController::class, 'controller'])->name('contro
 
 Route::get('/dashboard', [CustomController::class])->middleware(['auth'])->name('dashboard');
 
+Route::get('/csrf_token', [CustomController::class, 'csrf'])->name('csrf_token');
+
+Route::post('/student', [CustomController::class, 'StudentStore'])->name('student.store');
+
+Route::post('/about.store', [CustomController::class, 'about_store'])->name('about.store');
+
 require __DIR__.'/auth.php';
 
 // 01. 1ta Domain & Hosting

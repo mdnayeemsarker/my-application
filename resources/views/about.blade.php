@@ -13,6 +13,13 @@
     <h2>This is an About Us Page</h2>
 
     <br>
+    <form action="{{ route('about.store') }}" method="post">
+        @csrf
+        <input type="text" name="name" placeholder="Write Your Name Here.">
+        <input type="email" name="email" placeholder="Write Your Email Here.">
+        <button type="submit">Submit</button>
+    </form>
+
 
 </body>
 
