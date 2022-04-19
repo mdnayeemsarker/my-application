@@ -17,6 +17,7 @@
         @csrf
         <input type="text" name="name" placeholder="Write Your Name Here.">
         <input type="email" name="email" placeholder="Write Your Email Here.">
+        <input type="phone" name="phone" placeholder="Write Your Phone Here.">
         <button type="submit">Submit</button>
     </form>
 
