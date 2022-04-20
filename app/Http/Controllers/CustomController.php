@@ -46,7 +46,7 @@ class CustomController extends Controller
     {
         $validated = $request->validate([
             'name' => 'required|max:55',
-            'email' => 'required|unique:users|max:80',
+            'email' => 'required|unique:users|max:80|email',
             'password' => 'required|min:6|max:12',
         ]);
         dd($request->all());
