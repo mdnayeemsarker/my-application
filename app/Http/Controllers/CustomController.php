@@ -16,7 +16,8 @@ class CustomController extends Controller
     }
     public function contact()
     {
-        return view('contact');
+        abort(404);
+        // return view('contact');
     }
     public function country()
     {
