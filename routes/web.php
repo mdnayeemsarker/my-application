@@ -33,6 +33,8 @@ Route::post('/student', [CustomController::class, 'StudentStore'])->name('studen
 
 Route::post('/about.store', [CustomController::class, 'about_store'])->name('about.store');
 
+Route::post('/contact.store', [CustomController::class, 'contact_store'])->name('contact.store');
+
 require __DIR__.'/auth.php';
 
 // 01. 1ta Domain & Hosting
