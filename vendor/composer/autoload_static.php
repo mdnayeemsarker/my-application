@@ -533,6 +533,7 @@ class ComposerStaticInit25af8cc1eea6b813c02654815c79219d
         'App\\Http\\Controllers\\Auth\\VerifyEmailController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/VerifyEmailController.php',
         'App\\Http\\Controllers\\Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Controller.php',
         'App\\Http\\Controllers\\CustomController' => __DIR__ . '/../..' . '/app/Http/Controllers/CustomController.php',
+        'App\\Http\\Controllers\\admin\\ClassController' => __DIR__ . '/../..' . '/app/Http/Controllers/admin/ClassController.php',
         'App\\Http\\Kernel' => __DIR__ . '/../..' . '/app/Http/Kernel.php',
         'App\\Http\\Middleware\\Authenticate' => __DIR__ . '/../..' . '/app/Http/Middleware/Authenticate.php',
         'App\\Http\\Middleware\\CountryMiddleware' => __DIR__ . '/../..' . '/app/Http/Middleware/CountryMiddleware.php',

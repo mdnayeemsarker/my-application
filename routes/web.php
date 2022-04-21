@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Request;
 use App\Http\Controllers\CustomController;
+use App\Http\Controllers\admin\ClassController;
 
 /*
 |--------------------------------------------------------------------------
@@ -33,6 +34,11 @@ Route::post('/contact.store', [CustomController::class, 'contact_store'])->name(
 Route::post('/student', [CustomController::class, 'StudentStore'])->name('student.store');
 
 Route::post('/about.store', [CustomController::class, 'about_store'])->name('about.store');
+
+//__class crud routes__//
+Route::get('/class', [ClassController::class, 'index'])->name('class.index');
+
+
 
 Route::get('/dashboard', function () {
     return view('dashboard');

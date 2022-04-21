@@ -18,6 +18,7 @@ return array(
     'App\\Http\\Controllers\\Auth\\VerifyEmailController' => $baseDir . '/app/Http/Controllers/Auth/VerifyEmailController.php',
     'App\\Http\\Controllers\\Controller' => $baseDir . '/app/Http/Controllers/Controller.php',
     'App\\Http\\Controllers\\CustomController' => $baseDir . '/app/Http/Controllers/CustomController.php',
+    'App\\Http\\Controllers\\admin\\ClassController' => $baseDir . '/app/Http/Controllers/admin/ClassController.php',
     'App\\Http\\Kernel' => $baseDir . '/app/Http/Kernel.php',
     'App\\Http\\Middleware\\Authenticate' => $baseDir . '/app/Http/Middleware/Authenticate.php',
     'App\\Http\\Middleware\\CountryMiddleware' => $baseDir . '/app/Http/Middleware/CountryMiddleware.php',
