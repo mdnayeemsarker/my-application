@@ -21,4 +21,32 @@ class ClassController extends Controller
         // dd($class);
         return view('admin.class.index', compact('class'));
     }
+
+    //__create From page
+    public function create()
+    {
+        return view('admin.class.create');
+    }
+
+    //__Store data
+    public function store(Request $request)
+    {
+        $request -> validate([
+            'class_name' => 'required|unique:classes'
+        ]);
+        $data = array(
+            'class_name' => $request-> class_name,
+            'created_at' => DB::raw('CURRENT_TIMESTAMP'),
+            'updated_at' => DB::raw('CURRENT_TIMESTAMP'),
+        );
+        DB::table('classes')->insert($data);
+        return redirect()->back()->with('success', 'Class Added Successful');
+    }
+
+    //__delete methode__//
+    public function delete($id)
+    {
+        DB::table('classes')->where('id', $id)->delete();
+        return redirect()->back()->with('success', 'Class Deleted Successful');
+    }
 }

@@ -37,6 +37,9 @@ Route::post('/about.store', [CustomController::class, 'about_store'])->name('abo
 
 //__class crud routes__//
 Route::get('/class', [ClassController::class, 'index'])->name('class.index');
+Route::get('/create/class', [ClassController::class, 'create'])->name('create.class');
+Route::post('/store/class', [ClassController::class, 'store'])->name('store.class');
+Route::get('/class/delete/{id}', [ClassController::class, 'delete'])->name('class.delete');
 
 
 

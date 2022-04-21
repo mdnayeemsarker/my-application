@@ -14,9 +14,10 @@
     <div class="row">
         <div class="col-md-3"></div>
         <div class="card col-md-6 m-4">
-            <div class="card-header m-2">{{ __('All Class') }}</div>
+            <div class="card-header m-2">{{ __('All Class') }}
+                <a href="{{ route('create.class') }}" class="btn btn-sm btn-primary" style="float:right">Add New</a>
+            </div>
             <div class="card-body">
-                <a href="" class="btn btn-sm btn-primary" style="float:right">Add New</a>
                 <table class="table table-responsive table-strioe">
                     <thead>
                         <tr>
@@ -32,7 +33,8 @@
                                 <td>{{ $row->class_name }}</td>
                                 <td>
                                     <a href="#" class="btn btn-info btn-sm">Edit</a>
-                                    <a href="#" class="btn btn-danger btn-sm">Delete</a>
+                                    <a href="{{ route('class.delete', $row->id) }}"
+                                        class="btn btn-danger btn-sm">Delete</a>
                                 </td>
                             </tr>
                         @endforeach
