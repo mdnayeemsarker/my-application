@@ -17,23 +17,26 @@ use App\Http\Controllers\CustomController;
 
 Route::get('/', [CustomController::class, 'index']);
 
-Route::get(md5('/about'), [CustomController::class, 'about'])->name('about.us');
+Route::get('/about/us', [CustomController::class, 'about'])->name('about.us');
 
-Route::get('/contactbody', [CustomController::class, 'contact'])->name('contact.us');
+Route::get('/contact/us', [CustomController::class, 'contact'])->name('contact.us');
 
-Route::get('/country', [CustomController::class, 'country'])->name('country')->middleware('country');
-
+Route::get('/country', [CustomController::class, 'country'])->middleware('country')->name('country');
 Route::get('/controller', [CustomController::class, 'controller'])->name('controller');
 
 Route::get('/dashboard', [CustomController::class])->middleware(['auth'])->name('dashboard');
 
 Route::get('/csrf_token', [CustomController::class, 'csrf'])->name('csrf_token');
+Route::get('/about.store', [CustomController::class, 'StudentStoref'])->name('about.store');
+Route::post('/contact.store', [CustomController::class, 'contact_store'])->name('contact.store');
 
 Route::post('/student', [CustomController::class, 'StudentStore'])->name('student.store');
 
 Route::post('/about.store', [CustomController::class, 'about_store'])->name('about.store');
 
-Route::post('/contact.store', [CustomController::class, 'contact_store'])->name('contact.store');
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware(['auth'])->name('dashboard');
 
 require __DIR__.'/auth.php';
 

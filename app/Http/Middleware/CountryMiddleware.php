@@ -23,6 +23,7 @@ class CountryMiddleware
             'Vutten',
             'America',
             'USA',
+            'BA',
         ];
 
         if(in_array($request->country, $array)){
