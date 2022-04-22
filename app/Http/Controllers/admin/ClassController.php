@@ -40,13 +40,20 @@ class ClassController extends Controller
             'updated_at' => DB::raw('CURRENT_TIMESTAMP'),
         );
         DB::table('classes')->insert($data);
-        return redirect()->back()->with('success', 'Class Added Successful');
+        return redirect()->back()->with('success', 'Class="' . $request-> class_name . '"Added Successful');
     }
 
     //__delete methode__//
     public function delete($id)
     {
         DB::table('classes')->where('id', $id)->delete();
-        return redirect()->back()->with('success', 'Class Deleted Successful');
+        return redirect()->back()->with('success', 'Class ="' . $request-> class_name . '"Deleted Successful');
+    }
+
+    //__edit
+    public function edit($id)
+    {
+        $data = DB::table('classes')->where('id', $id)->first();
+        return view('admin.class.edit', compact('data'));
     }
 }
