@@ -3,7 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Request;
 use App\Http\Controllers\CustomController;
-use App\Http\Controllers\admin\ClassController;
+use App\Http\Controllers\Admin\ClassController;
+use App\Http\Controllers\Admin\StdudentController;
 
 /*
 |--------------------------------------------------------------------------
@@ -28,12 +29,10 @@ Route::get('/controller', [CustomController::class, 'controller'])->name('contro
 Route::get('/dashboard', [CustomController::class])->middleware(['auth'])->name('dashboard');
 
 Route::get('/csrf_token', [CustomController::class, 'csrf'])->name('csrf_token');
-Route::get('/about.store', [CustomController::class, 'StudentStoref'])->name('about.store');
+Route::get('/about.store', [CustomController::class, 'StudentStore'])->name('about.store');
 Route::post('/contact.store', [CustomController::class, 'contact_store'])->name('contact.store');
 
 Route::post('/student', [CustomController::class, 'StudentStore'])->name('student.store');
-
-Route::post('/about.store', [CustomController::class, 'about_store'])->name('about.store');
 
 //__class crud routes__//
 Route::get('/class', [ClassController::class, 'index'])->name('class.index');
@@ -41,7 +40,10 @@ Route::get('/create/class', [ClassController::class, 'create'])->name('create.cl
 Route::post('/store/class', [ClassController::class, 'store'])->name('store.class');
 Route::get('/class/delete/{id}', [ClassController::class, 'delete'])->name('class.delete');
 Route::get('/class/edit/{id}', [ClassController::class, 'edit'])->name('class.edit');
-Route::post('/class/edit/{id}', [ClassController::class, 'edit'])->name('class.edit');
+Route::post('/class/update/{id}', [ClassController::class, 'update'])->name('class.update');
+
+//__Students crud__//
+Route::resource('students', StdudentController::class);
 
 
 

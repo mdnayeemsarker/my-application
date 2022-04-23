@@ -15,7 +15,9 @@
         <div class="col-md-3"></div>
         <div class="card col-md-6 m-4">
             <div class="card-header m-2">{{ __('Add New Class') }}
-                <a href="{{ route('class.index') }}" class="btn btn-sm btn-danger" style="float:right">All Class</a>
+                <a href="{{ url('/dashboard') }}" class="btn btn-sm btn-primary m-2" style="float:right">Dashbord</a>
+                <a href="{{ route('class.index') }}" class="btn btn-sm btn-danger m-2" style="float:right">All
+                    Class</a>
             </div>
             <div class="card-body">
                 @if (session()->has('success'))

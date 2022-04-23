@@ -37,7 +37,6 @@ class ClassController extends Controller
         $data = array(
             'class_name' => $request-> class_name,
             'created_at' => DB::raw('CURRENT_TIMESTAMP'),
-            'updated_at' => DB::raw('CURRENT_TIMESTAMP'),
         );
         DB::table('classes')->insert($data);
         return redirect()->back()->with('success', 'Class="' . $request-> class_name . '"Added Successful');
@@ -47,7 +46,7 @@ class ClassController extends Controller
     public function delete($id)
     {
         DB::table('classes')->where('id', $id)->delete();
-        return redirect()->back()->with('success', 'Class ="' . $request-> class_name . '"Deleted Successful');
+        return redirect()->back()->with('success', 'Class"' . $request-> class_name . '"Deleted Successful');
     }
 
     //__edit
@@ -55,5 +54,19 @@ class ClassController extends Controller
     {
         $data = DB::table('classes')->where('id', $id)->first();
         return view('admin.class.edit', compact('data'));
+    }
+
+    //__edit
+    public function update(Request $request, $id)
+    {
+        $request -> validate([
+            'class_name' => 'required'
+        ]);
+        $data = array(
+            'class_name' => $request-> class_name,
+            'updated_at' => DB::raw('CURRENT_TIMESTAMP'),
+        );
+        DB::table('classes')->where('id', $id)->update($data);
+        return redirect()->back()->with('success', 'Class"' . $request-> class_name . '"Update Successful');
     }
 }

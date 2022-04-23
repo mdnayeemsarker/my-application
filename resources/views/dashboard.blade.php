@@ -9,7 +9,7 @@
                 <div class="p-6 bg-white border-b border-gray-200">
                     Hey {{ auth()->user()->name }} <br>
                     <a href="{{ route('class.index') }}" class="btn btn-info btn-sm">Class</a> <br>
-                    <a href="" class="btn btn-danger btn-sm">Stdudents</a>
+                    <a href="{{ route('students.index') }}" class="btn btn-danger btn-sm">Stdudents</a>
                 </div>
             </div>
         </div>

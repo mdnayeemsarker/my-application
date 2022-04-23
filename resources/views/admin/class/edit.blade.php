@@ -21,13 +21,13 @@
                 @if (session()->has('success'))
                     <strong class="text text-success">{{ session()->get('success') }}</strong>
                 @endif
-                <form action="{{ route('update.class') }}" method="post">
+                <form action="{{ route('class.update', $data->id) }}" method="post">
                     @csrf
                     <div class="mb-3">
                         <label for="class_name" id="class_name" class="form-lable">Class Name</label>
                         <input type="text" name="class_name" id="class_name"
-                            class="form-control @error('class_name') is-invalid @enderror" placeholder=""
-                            value="{{ old('class_name') }}">
+                            class="form-control @error('class_name') is-invalid @enderror"
+                            placeholder="{{ $data->class_name }}" value="{{ old('class_name') }}">
                         @error('class_name')
                             <strong class="text-danger">{{ $message }}</strong>
                         @enderror
