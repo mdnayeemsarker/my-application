@@ -64,7 +64,10 @@ class StdudentController extends Controller
      */
     public function show($id)
     {
-        //
+        $classes = DB::table('classes')->get();
+        $students = DB::table('students')->where('id', $id)->first();
+        return view('admin.students.show', compact('classes', 'students'));
+        // return response()->json($students, 200);
     }
 
     /**
