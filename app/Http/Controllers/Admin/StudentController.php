@@ -6,7 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use DB;
 
-class StdudentController extends Controller
+class StudentController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,8 +15,9 @@ class StdudentController extends Controller
      */
     public function index()
     {
+        $classes = DB::table('classes')->get();
         $students = DB::table('students')->orderBy('roll', 'ASC')->get();
-        return view('admin.students.index', compact('students'));
+        return view('admin.students.index', compact('classes', 'students'));
     }
 
     /**
@@ -53,7 +54,7 @@ class StdudentController extends Controller
             'created_at' => DB::raw('CURRENT_TIMESTAMP'),
         );
         DB::table('students')->insert($data);
-        return redirect()->back()->with('success', 'Student"' . $request-> name . '"Added Successful');
+        return redirect()->back()->with('success', 'Student "' . $request-> name . '" Added Successful');
     }
 
     /**
@@ -104,7 +105,7 @@ class StdudentController extends Controller
             'roll' => $request-> roll,
             'phone' => $request-> phone,
             'email' => $request-> email,
-            'created_at' => DB::raw('CURRENT_TIMESTAMP'),
+            'updated_at' => DB::raw('CURRENT_TIMESTAMP'),
         );
         DB::table('students')->where('id', $id)->update($data);
         return redirect()->route('students.index')->with('success', 'Student "' . $request-> name . '" Updated Successful');

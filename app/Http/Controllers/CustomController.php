@@ -43,6 +43,11 @@ class CustomController extends Controller
         dd($request->all());
     }
 
+    public function home()
+    {
+        return view('welcome');
+    }
+
     public function contact_store(Request $request)
     {
         $validated = $request->validate([

@@ -5,46 +5,40 @@
                 <div class="p-6 bg-white border-b border-gray-200">
                     <div class="row">
                         <div class="card col-md-12">
-                            <div class="card-header m-2">{{ __('All Students') }}
-                                <a href="{{ route('students.create') }}" class="btn btn-sm btn-primary m-2"
+                            <div class="card-header m-2">{{ __('All Books') }}
+                                <a href="{{ route('books.create') }}" class="btn btn-sm btn-primary m-2"
                                     style="float:right">Add
-                                    New Student</a>
+                                    New Books</a>
                             </div>
                             <div class="card-body">
                                 <table class="table table-responsive table-strioe">
                                     <thead>
                                         <tr>
                                             <td>SL</td>
-                                            <td>Roll</td>
                                             <td>Name</td>
-                                            <td>Phone</td>
-                                            <td>Class Name</td>
-                                            <td>Email</td>
+                                            <td>Class </td>
                                             <td>Action</td>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        @foreach ($students as $key => $row)
+                                        @foreach ($books as $key => $row)
                                             <tr>
                                                 <td>{{ ++$key }}</td>
-                                                <td>{{ $row->roll }}</td>
-                                                <td>{{ $row->name }}</td>
-                                                <td>{{ $row->phone }}</td>
+                                                <td>{{ $row->book_name }}</td>
                                                 <td>
                                                     {{-- @foreach ($classes as $row)
-                                                        @if ($row->id == $students->class_id)
+                                                        @if ($row->id == $books->class_id)
                                                             {{ $row->class_name }}
                                                         @endif
                                                     @endforeach --}}
                                                     {{ $row->class_id }}
                                                 </td>
-                                                <td>{{ $row->email }}</td>
                                                 <td>
-                                                    <a href="{{ route('students.show', $row->id) }}"
+                                                    <a href="{{ route('books.show', $row->id) }}"
                                                         class="btn btn-info btn-sm m-1">View</a>
-                                                    <a href="{{ route('students.edit', $row->id) }}"
+                                                    <a href="{{ route('books.edit', $row->id) }}"
                                                         class="btn btn-primary btn-sm m-1">Edit</a>
-                                                    <form action="{{ route('students.destroy', $row->id) }}"
+                                                    <form action="{{ route('books.destroy', $row->id) }}"
                                                         method="post">
                                                         @csrf
                                                         <input type="hidden" name="_method" value="DELETE">

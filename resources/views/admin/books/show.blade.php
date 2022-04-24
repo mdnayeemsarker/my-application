@@ -5,38 +5,31 @@
                 <div class="p-6 bg-white border-b border-gray-200">
                     <div class="row">
                         <div class="card col-md-12">
-                            <div class="card-header">{{ __('All Students') }}
-                                <a href="{{ route('students.index') }}" class="btn btn-sm btn-primary m-2"
-                                    style="float:right">All
-                                    New Student</a>
+                            <div class="card-header">{{ __('All Books') }}
+                                <a href="{{ route('books.index') }}" class="btn btn-sm btn-primary m-2"
+                                    style="float:right">All Books</a>
                             </div>
                             <div class="card-body">
                                 <table class="table table-responsive table-strioe">
                                     <thead>
                                         <tr>
-                                            <td>Roll</td>
-                                            <td>Name</td>
-                                            <td>Phone</td>
+                                            <td>Book Name</td>
                                             <td>Class</td>
-                                            <td>Email</td>
                                             <td>Action</td>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         <tr>
-                                            <td>{{ $students->roll }}</td>
-                                            <td>{{ $students->name }}</td>
-                                            <td>{{ $students->phone }}</td>
+                                            <td>{{ $books->book_name }}</td>
                                             <td>
                                                 @foreach ($classes as $row)
-                                                    @if ($row->id == $students->class_id)
+                                                    @if ($row->id == $books->class_id)
                                                         {{ $row->class_name }}
                                                     @endif
                                                 @endforeach
                                             </td>
-                                            <td>{{ $students->email }}</td>
                                             <td>
-                                                <a href="{{ route('students.edit', $students->id) }}"
+                                                <a href="{{ route('books.edit', $books->id) }}"
                                                     class="btn btn-primary btn-sm m-1">Edit</a>
                                             </td>
                                         </tr>

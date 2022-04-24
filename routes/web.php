@@ -4,7 +4,9 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Request;
 use App\Http\Controllers\CustomController;
 use App\Http\Controllers\Admin\ClassController;
-use App\Http\Controllers\Admin\StdudentController;
+use App\Http\Controllers\Admin\StudentController;
+use App\Http\Controllers\Admin\TeacherController;
+use App\Http\Controllers\Admin\BooksController;
 
 /*
 |--------------------------------------------------------------------------
@@ -43,9 +45,14 @@ Route::get('/class/edit/{id}', [ClassController::class, 'edit'])->name('class.ed
 Route::post('/class/update/{id}', [ClassController::class, 'update'])->name('class.update');
 
 //__Students crud__//
-Route::resource('students', StdudentController::class);
+Route::resource('students', StudentController::class);
 
+//Teachers crud__//
+Route::resource('teachers', TeacherController::class);
 
+Route::resource('books', BooksController::class);
+
+Route::get('/home', [CustomController::class, 'home'])->name('home');
 
 Route::get('/dashboard', function () {
     return view('dashboard');

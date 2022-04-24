@@ -8,6 +8,9 @@ $baseDir = dirname($vendorDir);
 return array(
     'App\\Console\\Kernel' => $baseDir . '/app/Console/Kernel.php',
     'App\\Exceptions\\Handler' => $baseDir . '/app/Exceptions/Handler.php',
+    'App\\Http\\Controllers\\Admin\\BooksController' => $baseDir . '/app/Http/Controllers/Admin/BooksController.php',
+    'App\\Http\\Controllers\\Admin\\StudentController' => $baseDir . '/app/Http/Controllers/Admin/StudentController.php',
+    'App\\Http\\Controllers\\Admin\\TeacherController' => $baseDir . '/app/Http/Controllers/Admin/TeacherController.php',
     'App\\Http\\Controllers\\Auth\\AuthenticatedSessionController' => $baseDir . '/app/Http/Controllers/Auth/AuthenticatedSessionController.php',
     'App\\Http\\Controllers\\Auth\\ConfirmablePasswordController' => $baseDir . '/app/Http/Controllers/Auth/ConfirmablePasswordController.php',
     'App\\Http\\Controllers\\Auth\\EmailVerificationNotificationController' => $baseDir . '/app/Http/Controllers/Auth/EmailVerificationNotificationController.php',
@@ -18,7 +21,6 @@ return array(
     'App\\Http\\Controllers\\Auth\\VerifyEmailController' => $baseDir . '/app/Http/Controllers/Auth/VerifyEmailController.php',
     'App\\Http\\Controllers\\Controller' => $baseDir . '/app/Http/Controllers/Controller.php',
     'App\\Http\\Controllers\\CustomController' => $baseDir . '/app/Http/Controllers/CustomController.php',
-    'App\\Http\\Controllers\\admin\\ClassController' => $baseDir . '/app/Http/Controllers/admin/ClassController.php',
     'App\\Http\\Kernel' => $baseDir . '/app/Http/Kernel.php',
     'App\\Http\\Middleware\\Authenticate' => $baseDir . '/app/Http/Middleware/Authenticate.php',
     'App\\Http\\Middleware\\CountryMiddleware' => $baseDir . '/app/Http/Middleware/CountryMiddleware.php',
