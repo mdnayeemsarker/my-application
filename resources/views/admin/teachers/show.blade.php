@@ -8,7 +8,7 @@
                             <div class="card-header">{{ __('All Teachers') }}
                                 <a href="{{ route('teachers.index') }}" class="btn btn-sm btn-primary m-2"
                                     style="float:right">All
-                                    New Student</a>
+                                    Teacher</a>
                             </div>
                             <div class="card-body">
                                 <table class="table table-responsive table-strioe">

@@ -31,12 +31,7 @@
                                                 <td>{{ $row->name }}</td>
                                                 <td>{{ $row->phone }}</td>
                                                 <td>
-                                                    {{-- @foreach ($classes as $row)
-                                                        @if ($row->id == $students->class_id)
-                                                            {{ $row->class_name }}
-                                                        @endif
-                                                    @endforeach --}}
-                                                    {{ $row->class_id }}
+                                                    {{ $row->class_name }}
                                                 </td>
                                                 <td>{{ $row->email }}</td>
                                                 <td>

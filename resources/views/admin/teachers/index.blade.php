@@ -38,8 +38,8 @@
                                                     {{ $row->book_id }}
                                                 </td>
                                                 <td>
-                                                    {{ 'Create: ' . $row->created_at }} <br>
-                                                    {{ 'Update: ' . $row->updated_at }}
+                                                    {{ 'Cr: ' . $row->created_at }} <br>
+                                                    {{ 'Up: ' . $row->updated_at }}
                                                 </td>
                                                 <td>
                                                     <form action="{{ route('teachers.destroy', $row->id) }}"
